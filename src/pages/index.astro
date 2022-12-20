@@ -1,50 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import BooksCard from '../components/BooksComponents/BooksCard.astro';
 ---
 
 <Layout title="Welcome to Astro.">
+	<div class="guard-page">
+		<div class="guard-page-main">
+			<h1>CODE GÉNÉRAL DES IMPÔTS</h1>
+			<h3>2022</h3>
+			<p>Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin </p>
+		</div>
+	</div>
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		<h2>TABLE DES MATIÈRES</h2>
+		(à renseigner)
+	</main>
+	<main>
+		<p>L’Assemblée nationale a délibéré et adopté en sa séance du 08 décembre 2021 ; 
+			Le Président de la République promulgue la loi dont la teneur suit : </p>
+		<p class="instructions" id="article-1">
+			<strong>Article 1er :</strong>
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card 
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<p class="list-article">
+				<span class="span-color">1)</span> L’assiette, la liquidation, le contrôle et les modalités de recouvrement 
+			des impositions de toute nature sont du domaine de la loi. 
+			<br>
+			<span class="span-color">2)</span> Les règles d’assiette, de liquidation et de recouvrement des impôts, droits et taxes 
+			visés  par  le  présent  code  sont  applicables  sous  réserve  des  dispositions  des  conventions  
+			internationales régulièrement ratifiées par le Bénin. 
+			<br>
+			<span class="span-color">3)</span> Sont nuls et de nul  effet, tous  avantages  fiscaux, toutes exonérations d’impôts, 
+			droits et taxes non prévus par la loi.
+		
+	</p>
 	</main>
 </Layout>
 
 <style>
+	
+	.guard-page{
+		padding: 4em;
+		background-color: #0d350d;
+		color: white;
+
+	}
+	.guard-page-main{
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 70%;
+	}
+
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		max-width: 60ch;
+		max-width: 90%;
 	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
+	}
+	.center-text{
+		text-align: center;
+	}
+	.table-of-content{
+		
+	}
+	.list-article{
+		margin: auto;
+		width: 90%;
+		margin-left: 2em;
+	}
+	.span-color{
+		color: rgb(11, 71, 3);
+		font-size: medium;
+		font-weight: 500;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
