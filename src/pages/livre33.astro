@@ -6,7 +6,6 @@ import Chapter from "../components/Chapter.astro";
 import Section from "../components/Section.astro";
 import SubSection from "../components/SubSection.astro";
 import Paragraph from "../components/Paragraph.astro";
-import Article from "../components/Article.astro";
 ---
 
 <Layout title="CODE GÉNÉRAL DES IMPÔTS 2022">
@@ -38,8 +37,8 @@ import Article from "../components/Article.astro";
         morales désignées par le présent chapitre sont soumis à un impôt annuel dénommé impôt sur les sociétés. </p>
       <Section bk={1} tl={1} ch={1} se={1} title="CHAMP D’APPLICATION" />
       <SubSection bk={1} tl={1} ch={1} se={1} sb={1} title="PERSONNES IMPOSABLES" />
-      <p class="head-p"><b class="head">Article 3 :</b> Sont passibles de l’impôt sur les sociétés : 1) En raison de
-        leur forme : </p>
+      <p class="head-p"><b class="head">Article 3 :</b> Sont passibles de l’impôt sur les sociétés :</p>
+      <p class="sub">1) En raison de leur forme : </p>
       <p class="sub-sub">a) les sociétés anonymes, les sociétés par actions simplifiées, les sociétés à responsabilité
         limitée et les sociétés en commandite simple ; </p>
       <p class="sub-sub">b) les sociétés coopératives, les groupements et leurs unions et fédérations, ainsi que les
@@ -377,23 +376,9 @@ import Article from "../components/Article.astro";
         autorisées par le gouvernement à faire des opérations de crédit foncier.</p>
       <Paragraph bk={1} tl={1} ch={1} se={2} sb={2} pr={3} title="REGIME DES SUBVENTIONS" />
       <p class="head-p"><b class="head">Article 16 :</b></p>
-      <p class="sub"> 1) Les subventions d’équipement accordées aux entreprises ne sont pas comprises dans les résultats
-        de l’année de leur encaissement. Ces subventions sont rapportées aux résultats nets
-        des exercices à concurrence du montant des amortissements pratiqués, à la clôture desdits exercices, sur le prix
-        de revient des immobilisations amortissables, lorsqu’elles sont utilisées pour la création ou l’acquisition
-        desdites immobilisations. </p>
-      <p class="sub">Les subventions affectées à l’acquisition ou à la création d’immobilisations non amortissables
-        doivent être rapportées par fractions égales au résultat des années pendant lesquelles cette
-        immobilisation est inaliénable aux termes du contrat accordant la subvention ou, a</p>
-      <p class="sub">̀</p>
-      <p class="sub"> défaut de clause d’inaliénabilité</p>
-      <p class="sub">́</p>
-      <p class="sub">, au bénéfice de chacune des dix années a</p>
-      <p class="sub">̀</p>
-      <p class="sub"> venir, y compris celle de la création ou de l’acquisition de ces immobilisations. </p>
-      <p class="sub">En cas de cession des immobilisations visées au présent article, la fraction de la subvention non
-        encore rapportée aux bases de l’impôt est retranchée de la valeur comptable de ces immobilisations
-        pour la détermination de la plus-value imposable ou de la moins-value déductible. </p>
+      <p class="sub">1) Les subventions d’équipement accordées aux entreprises ne sont pas comprises dans les résultats de l’année de leur encaissement. Ces subventions sont rapportées aux résultats nets des exercices à concurrence du montant des amortissements pratiqués, à la clôture desdits exercices, sur le prix de revient des immobilisations amortissables, lorsqu’elles sont utilisées pour la création ou l’acquisition desdites immobilisations. </p>
+      <p class="sub">Les subventions affectées à l’acquisition ou à la création d’immobilisations non amortissables doivent être rapportées par fractions égales au résultat des années pendant lesquelles cette immobilisation est inaliénable aux termes du contrat accordant la subvention ou, a  défaut de clause d’inaliénabilité, au bénéfice de chacune des dix années a venir, y compris celle de la création ou de l’acquisition de ces immobilisations. </p>
+      <p class="sub">En cas de cession des immobilisations visées au présent article, la fraction de la subvention non encore rapportée aux bases de l’impôt est retranchée de la valeur comptable de ces immobilisations pour la détermination de la plus-value imposable ou de la moins-value déductible. </p>
       <p class="sub">2) Les subventions d’exploitation ou d’équilibre font partie du résultat net de l’exercice de leur
         encaissement.</p>
       <Paragraph bk={1} tl={1} ch={1} se={2} sb={2} pr={4} title="REGIME DES PLUS-VALUES" />
@@ -772,7 +757,7 @@ import Article from "../components/Article.astro";
       <p class="sub-sub">b) les provisions techniques constituées par les sociétés d’assurance incendie, accidents et
         risques divers, notamment les provisions pour annulation de primes et les provisions pour sinistres
         tardifs, à condition : </p>
-      <p class="sub"> - qu’elles aient été déterminées conformément à la méthode de la cadence recommandée par la
+      <p class="sub-sub">- qu’elles aient été déterminées conformément à la méthode de la cadence recommandée par la
         Conférence interafricaine des marchés d’assurances ; </p>
 
       <p class="sub-sub">- que les bases statistiques utilisées soient représentées à toute réquisition de l’inspecteur
@@ -891,11 +876,10 @@ import Article from "../components/Article.astro";
         de produits d’exploitation, de produits financiers ou de produits hors activité ordinaire. Sont exclus des
         produits encaissables, la production immobilisée, la production stockée, les transferts de charges, les reprises
         de provisions et d’amortissements. </p>
-      <p class="sub"> 3) Dans tous les cas, l’impôt ne peut être inférieur à cinq cent mille (500 000) francs </p>
-      <p class="sub">CFA. </p>
+      <p class="sub"> 3) Dans tous les cas, l’impôt ne peut être inférieur à cinq cent mille (500 000) francs CFA.</p>
       <p class="sub">4) En ce qui concerne le commerce de véhicules d’occasion et de certains produits de grande
         consommation, le montant et les modalités de perception de l’impôt minimum sont fixés par voie
-        réglementaire. </p>
+        réglementaire.</p>
       <p class="sub">5) Pour les stations-services, le montant annuel de l’impôt ne peut, nonobstant les dispositions
         prévues au paragraphe 1 du présent article, être inférieur à celui obtenu par application d’un taux
         unique de 0,60 franc CFA par litre au volume des produits pétroliers vendus. Dans tous les cas, l’impôt ne peut
@@ -903,18 +887,15 @@ import Article from "../components/Article.astro";
       <p class="sub">Ces dispositions sont applicables aux distributeurs non importateurs de produits pétroliers,
         s’approvisionnant auprès des entreprises importatrices agréées, et pratiquant les prix homologués au
         même titre que les stations-services. </p>
-      <p class="sub">6) Le montant de l’impôt est majoré d’une redevance de quatre milles (4 000) </p>
-      <p class="sub"> francs CFA, au profit de l’office de radiodiffusion et télévision du Bénin, payable lors du
-        versement de
-        l’acompte du 10 mars prévu à l’article 51 du présent code. </p>
+      <p class="sub">6) Le montant de l’impôt est majoré d’une redevance de quatre milles (4 000) francs CFA, au profit de l’office de radiodiffusion et télévision du Bénin, payable lors du
+        versement de l’acompte du 10 mars prévu à l’article 51 du présent code. </p>
       <p class="head-p"><b class="head">Article 48 :</b></p>
       <p class="sub"> 1) Les sociétés d’assurance de dommages de toute nature doivent, lorsqu’elles rapportent au
         résultat imposable d’un exercice l’excédent des provisions constituées pour faire face
         au règlement des sinistres advenus au cours d’un exercice antérieur, acquitter un complément d’impôt sur les
         sociétés, représentatif de l’intérêt correspondant à l’avantage de trésorerie ainsi obtenu. Ce complément ne
         s’applique pas aux provisions constituées à raison des opérations de réassurance. </p>
-      <p class="sub">2) Le complément de l’impôt sur les sociétés est égal à 5% des montants réintégrés. </p>
-      <p class="sub">Il est déclaré et payé annuellement en même temps que le solde de l’impôt sur les sociétés de la
+      <p class="sub">2) Le complément de l’impôt sur les sociétés est égal à 5% des montants réintégrés. Il est déclaré et payé annuellement en même temps que le solde de l’impôt sur les sociétés de la
         société d’assurance. </p>
       <p class="sub">3) Les modalités d’application du présent article seront précisées par voie réglementaire.</p>
       <Section bk={1} tl={1} ch={1} se={4} title="DECLARATION ET PAIEMENT" />
@@ -1091,16 +1072,7 @@ import Article from "../components/Article.astro";
       <p class="sub-sub">a) les amortissements ne peuvent être pratiqués que selon le mode linéaire ; </p>
       <p class="sub-sub">b) le report déficitaire est limité à trois (3) ans. </p>
       <p class="sub">3) Sont déductibles : </p>
-      <p class="sub-sub">- le salaire du conjoint de l’exploitant participant effectivement a</p>
-      <p class="sub">̀</p>
-      <p class="sub"> l’exploitation à</p>
-      <p class="sub">̀la condition que ce salaire ne soit pas anormalement élevé </p>
-      <p class="sub">́</p>
-      <p class="sub"> et ait donné lieu au versement des cotisations relevant du régime de sécurité</p>
-      <p class="sub">́</p>
-      <p class="sub"> sociale et subisse les retenues fiscales a</p>
-      <p class="sub">̀</p>
-      <p class="sub"> la source ; </p>
+      <p class="sub-sub">- le salaire du conjoint de l’exploitant participant effectivement a l’exploitation à ̀la condition que ce salaire ne soit pas anormalement élevé  et ait donné lieu au versement des cotisations relevant du régime de sécurité sociale et subisse les retenues fiscales a la source ; </p>
       <p class="sub-sub">- les rémunérations allouées aux autres membres de la famille de l’exploitant, dans les
         conditions normales dès lors qu’elles sont réellement versées et correspondent à un travail effectif ; </p>
       <p class="sub-sub">- les versements volontaires faits par l’exploitant pour la constitution de retraite et les
@@ -1156,19 +1128,16 @@ import Article from "../components/Article.astro";
       <p class="sub-sub">c) le montant et les modalités de perception de l’impôt minimum sont fixés par voie
         règlementaire en ce qui concerne le commerce de véhicules d’occasion et de certains produits de grande
         consommation. </p>
-      <p class="sub">3) a) L’impôt ne peut en aucun cas être inférieur à cinq cent mille (500 000) francs </p>
-      <p class="sub">CFA. </p>
+      <p class="sub">3) a) L’impôt ne peut en aucun cas être inférieur à cinq cent mille (500 000) francs CFA.</p>
       <p class="sub-sub">b) Pour les gérants de stations-services, le minimum de perception ne peut être inférieur à
         celui obtenu par application d’un taux unique de 0,60 francs CFA par litre au volume des produits
         pétroliers vendus. Ces dispositions sont applicables aux distributeurs non importateurs de produits pétroliers,
         s’approvisionnant auprès des entreprises importatrices agréées, et pratiquant les prix homologués au même titre
         que les stations-services. Dans tous les cas, l’impôt ne peut être inférieur à deux cent cinquante mille (250
-        000)
-        francs CFA. </p>
+        000) francs CFA. </p>
       <p class="sub">4) Le montant de l’impôt est majoré d’une redevance de quatre mille (4 000) </p>
       <p class="sub"> francs CFA, au profit de l’office de radiodiffusion et télévision du Bénin, payable lors du
-        versement de
-        l’acompte du 10 mars prévu à l’article 51 ci-dessus. </p>
+        versement de l’acompte du 10 mars prévu à l’article 51 ci-dessus. </p>
       <p class="head-p"><b class="head">Article 65 :</b> Le montant de l’impôt est réduit de moitié pour : </p>
       <p class="sub">1) les personnes travaillant chez elles, soit à la main soit à l’aide de la force motrice, que les
         instruments de travail soient ou non leur propriété, lorsqu’elles opèrent exclusivement à façon, pour le
@@ -1376,7 +1345,7 @@ import Article from "../components/Article.astro";
         à
         la distribution des dividendes et autres produits susceptibles d’être exonérés. </p>
       <p class="head-p"><b class="head">PARAGRAPHE 6</b></p>
-      <p class="sub"> class="head-p" <b class="head">SOCIETES DE GESTION D’UN PORTEFEUILLE DE VALEURS MOBILIERES</b></p>
+      <p class="head-p"><b class="head">SOCIETES DE GESTION D’UN PORTEFEUILLE DE VALEURS MOBILIERES</b></p>
       <p class="head-p"><b class="head">Article 77 :</b> Les dividendes distribués par les sociétés ayant pour objet
         exclusif la gestion d’un portefeuille de valeurs mobilières et dont les statuts et leurs modifications
         ultérieures auront
@@ -1435,8 +1404,7 @@ import Article from "../components/Article.astro";
         aux intérêts des dépôts effectués par les non-adhérents auxdites caisses. Elle s’applique aux sociétés
         coopératives de pêche et d’élevage et à leurs unions ; </p>
       <p class="sub">9) les intérêts, arrérages et tous autres produits : </p>
-      <p class="sub-sub">a) des rentes, obligations et autres effets publics émis par la République du </p>
-      <p class="sub">Bénin, les collectivités publiques béninoises et leurs démembrements ; </p>
+      <p class="sub-sub">a) des rentes, obligations et autres effets publics émis par la République du Bénin, les collectivités publiques béninoises et leurs démembrements ; </p>
       <p class="sub-sub">b) des emprunts contractés par l’État, les collectivités locales et établissements publics
         auprès de la caisse de dépôts et consignations ; </p>
       <p class="sub">10) les obligations et emprunts émis ou à émettre par les sociétés d’habitations à bon marché ainsi
@@ -2413,7 +2381,7 @@ import Article from "../components/Article.astro";
       <p class="sub">5) Les avantages fiscaux prévus ci-dessus ne peuvent être cumulés, pour un même contribuable, avec
         d’autres régimes privilégiés ou dérogatoires. </p>
       <p class="head-p"><b class="head">SECTION 3</b></p>
-      <p class="sub"> class="head-p" <b class="head">INCITATION A LA CREATION D’EMPLOIS SALARIES</b></p>
+      <p class="head-p"><b class="head">INCITATION A LA CREATION D’EMPLOIS SALARIES</b></p>
       <p class="head-p"><b class="head">Article 149 :</b></p>
       <p class="sub"> 1) Les assujettis à l’impôt sur les sociétés ou à l’impôt sur les bénéfices d’affaires justifiant
         d’une année d’activité, peuvent bénéficier d’un crédit d’impôt annuel non renouvelable
@@ -6394,8 +6362,7 @@ import Article from "../components/Article.astro";
         impôts
         territorialement compétent, les relevés par eux certifiés des actes de décès du trimestre écoulé à peine de
         l’amende prévue à l’article 496 du présent code. </p>
-      <p class="sub">Au cas où aucune succession de l’espèce n’est ouverte pendant un trimestre déterminé, il est dressé
-        un état négatif, dans le délai fixé au premier alinéa du présent article et sous la même
+      <p class="sub">Au cas où aucune succession de l’espèce n’est ouverte pendant un trimestre déterminé, il est dressé un état négatif, dans le délai fixé au premier alinéa du présent article et sous la même
         sanction. </p>
       <p class="head-p"><b class="head">Article 398 :</b> Les administrations publiques, les établissements ou organismes quelconques soumis au contrôle de
         l’autorité administrative, les sociétés, les banques, officiers publics ou
@@ -9953,7 +9920,7 @@ import Article from "../components/Article.astro";
         632 du présent code. Ce paiement devant être effectué nonobstant toute opposition, ils deviennent solidairement
         responsables des sommes dont les redevables ont éludé le versement. </p>
       <p class="head-p"><b class="head">SECTION 4</b></p>
-      <p class="sub"> class="head-p" <b class="head">OBLIGATIONS DES DEPOSITAIRES PUBLICS DE FONDS</b></p>
+      <p class="head-p"><b class="head">OBLIGATIONS DES DEPOSITAIRES PUBLICS DE FONDS</b></p>
       <p class="head-p"><b class="head">Article 657 :</b></p>
       <p class="sub"> 1) Les huissiers, greffiers, commissaires-priseurs, notaires, syndics de faillite, séquestres et
         tous autres dépositaires publics de deniers ne peuvent remettre aux héritiers, créanciers et autres
@@ -9981,9 +9948,7 @@ import Article from "../components/Article.astro";
 
       <p class="sub-sub">-du décret n° 2005-124 du 17 mars 2005 portant approbation de la codification générale des
         procédures fiscales en République du Bénin. </p>
-      <p class="head-p"><b class="head">Article 659</b></p>
-      <p class="sub"> : La présente loi qui entre en vigueur à compter du 1er</p>
-      <p class="sub"> janvier 2022 sera publiée au journal officiel et exécutée comme loi de l’Etat. </p>
+      <p class="head-p"><b class="head">Article 659</b> : La présente loi qui entre en vigueur à compter du 1er janvier 2022 sera publiée au journal officiel et exécutée comme loi de l’Etat. </p>
       <p class="sub"> Fait à Cotonou, le 23 décembre 2021 </p>
       <p class="sub">Par le Président de la République, </p>
       <p class="sub">Chef de l’Etat, Chef du Gouvernement </p>
