@@ -1,4 +1,7 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import SideBar from "../components/SideBar.astro";
+
 export interface Props {
   title: string;
 }
@@ -33,8 +36,12 @@ const { title, description } = Astro.props;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/seo-image.png" />
   </head>
-  <body>
-    <slot />
+  <body class="mx-auto max-w-screen-2xl">
+    <Navbar />
+    <div class="flex">
+      <SideBar />
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>
