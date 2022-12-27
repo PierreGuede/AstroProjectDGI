@@ -3373,18 +3373,37 @@ import Paragraph from "../components/Paragraph.astro";
       <SubSection sb={2} title="ÉTABLISSEMENT DES IMPOSITIONS" />
       <p class="head-p"><b class="head">Article 215 :</b></p>
       <p class="sub  mb-2"> 1) Le tarif de la contribution des licences est fixé comme suit : </p>
-      <p class="head-p"><b class="head">Tranche de chiffre d’affaires</b></p>
-      <p class="head-p"><b class="head">Première zone</b></p>
-      <p class="head-p"><b class="head">Deuxième zone</b></p>
-      <p class="sub  mb-2">Inférieur ou égal à 500 000 000 </p>
-      <p class="sub  mb-2">50 000 </p>
-      <p class="sub  mb-2">30 000 </p>
-      <p class="sub  mb-2">Supérieur à 500 000 000 et inférieur ou égal à un milliard </p>
-      <p class="sub  mb-2">80 000 </p>
-      <p class="sub  mb-2">60 000 </p>
-      <p class="sub  mb-2">Supérieur à un milliard </p>
-      <p class="sub  mb-2">100 000 </p>
-      <p class="sub  mb-2">100 000 </p>
+      <table class="w-full">
+        <thead class="bg-slate-300 border-b-2 border-slate-400">
+          <tr class="">
+            <th  class="border-r-2 border-slate-400">Tranches de chiffre d’affaires  </th>
+            <th  class="border-b-2 border-slate-400">Première zone   </th>
+            <th  class="border-b-2 border-slate-400">Deuxième zone  </th>
+          </tr>
+          <!-- <tr class="">
+            <th class="border-r-2 border-slate-400">Propriétés bâties </th>
+            <th class="border-r-2 border-slate-400">Propriétés non bâties</th>
+          </tr> -->
+        </thead>
+        <tbody>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Inférieur ou égal à 500 000 000 </td>
+            <td class="text-cente border-r-2 border-slate-400">50 000 </td>
+            <td class="text-center">30 000 </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Supérieur  à  500 000 000  et  inférieur  ou  égal  à  un milliard</td>
+            <td class="text-center border-r-2 border-slate-400">80 000  </td>
+            <td class="text-center border-r-2 border-slate-400">60 000  </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Supérieur à un milliard </td>
+            <td class="text-center border-r-2 border-slate-400">100 000  </td>
+            <td class="text-center border-r-2 border-slate-400">100 000  </td>
+          </tr>
+          
+        </tbody>
+      </table> 
       <p class="sub  mb-2">2) Le chiffre d’affaires s’entend de l’ensemble des recettes et produits acquis au titre de
         l’exercice précédent. </p>
       <p class="sub  mb-2">Les zones sont celles définies à l’article 202 ci-dessus. </p>
