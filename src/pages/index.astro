@@ -2582,42 +2582,88 @@ import Paragraph from "../components/Paragraph.astro";
 
       <p class="sub-sub  mb-2">-6% pour les propriétés bâties. </p>
       <p class="sub  mb-2">Zones non dotées du Registre Foncier Urbain : </p>
-      <p class="head-p"><b class="head">Communes</b></p>
-      <p class="head-p"><b class="head">Taux</b></p>
-      <p class="head-p"><b class="head">Propriétés bâties</b></p>
-      <p class="head-p"><b class="head">Propriétés non bâties</b></p>
-      <p class="sub  mb-2">Djougou 30% </p>
-      <p class="sub  mb-2">6% </p>
-      <p class="sub  mb-2">Kandi 30% </p>
-      <p class="sub  mb-2">6% </p>
-      <p class="sub  mb-2">Natitingou 30% </p>
-      <p class="sub  mb-2">6% </p>
-      <p class="sub  mb-2">Abomey 28% </p>
-      <p class="sub  mb-2">5,6% </p>
-      <p class="sub  mb-2">Bohicon 25% </p>
-      <p class="sub  mb-2">5,6% </p>
-      <p class="sub  mb-2">Ouidah 25% </p>
-      <p class="sub  mb-2">5% </p>
-      <p class="sub  mb-2">Lokossa 20% </p>
-      <p class="sub  mb-2">6% </p>
-      <p class="sub  mb-2">Autres communes des Départements : - Borgou - Alibori </p>
-      <p class="sub  mb-2">30% </p>
-      <p class="sub  mb-2">6% </p>
-      <p class="sub-sub  mb-2">- Zou - Collines </p>
-      <p class="sub  mb-2">25% </p>
-      <p class="sub  mb-2">4% </p>
-      <p class="sub-sub  mb-2">- Atacora - Donga </p>
-      <p class="sub  mb-2">24% </p>
-      <p class="sub  mb-2">4% </p>
-      <p class="sub-sub  mb-2">- Atlantique </p>
-      <p class="sub  mb-2">20% </p>
-      <p class="sub  mb-2">4% </p>
-      <p class="sub-sub  mb-2">- Mono - Couffo </p>
-      <p class="sub  mb-2">20% </p>
-      <p class="sub  mb-2">4% </p>
-      <p class="sub-sub  mb-2">- Ouémé - Plateau </p>
-      <p class="sub  mb-2">15% </p>
-      <p class="sub  mb-2">4% </p>
+      <table class="w-full">
+        <thead class="bg-slate-300 border-b-2 border-slate-400">
+          <tr class="">
+            <th rowspan="2" class="border-r-2 border-slate-400">Communes </th>
+            <th colspan="2" class="border-b-2 border-slate-400">Taux </th>
+          </tr>
+          <tr class="">
+            <th class="border-r-2 border-slate-400">Propriétés bâties </th>
+            <th class="border-r-2 border-slate-400">Propriétés non bâties</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Djougou</td>
+            <td class="text-cente border-r-2 border-slate-400"> 30% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Kandi</td>
+            <td class="text-center border-r-2 border-slate-400"> 30% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Natitingou</td>
+            <td class="text-center border-r-2 border-slate-400"> 30% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Abomey</td>
+            <td class="text-center border-r-2 border-slate-400"> 28% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Bohicon</td>
+            <td class="text-center border-r-2 border-slate-400"> 25% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Ouidah</td>
+            <td class="text-center border-r-2 border-slate-400"> 25% </td>
+            <td class="text-center">5% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >Lokossa</td>
+            <td class="text-center border-r-2 border-slate-400"> 20% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2 border-slate-400">
+            <td class="" >Autres communes des Départements : </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >- Borgou - Alibori </td>
+            <td class="text-center border-r-2 border-slate-400">30% </td>
+            <td class="text-center">6% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >- Zou - Collines </td>
+            <td class="text-center border-r-2 border-slate-400">25% </td>
+            <td class="text-center">4% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >- Atacora - Donga </td>
+            <td class="text-center border-r-2 border-slate-400">24% </td>
+            <td class="text-center">4% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >- Atlantique </td>
+            <td class="text-center border-r-2 border-slate-400">20% </td>
+            <td class="text-center">4% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >- Mono - Couffo </td>
+            <td class="text-center border-r-2 border-slate-400">20% </td>
+            <td class="text-center">4% </td>
+          </tr>
+          <tr class="text-center border-b-2 border-r-2  border-slate-400">
+            <td class="border-r-2 border-slate-400" >- Ouémé - Plateau </td>
+            <td class="text-center border-r-2 border-slate-400">15% </td>
+            <td class="text-center">4% </td>
+          </tr>
+        </tbody>
+      </table>
       <p class="sub  mb-2">3) En sus du montant de l’impôt issu de l’application des taux ci-dessus, il est perçu, à la charge
         des occupants d’immeubles d’habitation, un prélèvement au profit du budget des
         collectivités locales,
