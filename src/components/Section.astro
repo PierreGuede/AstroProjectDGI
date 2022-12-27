@@ -2,14 +2,6 @@
 const { bk, tl, ch, se, title } = Astro.props;
 ---
 
-<h5 id={`bk${bk}-tl${tl}-ch${ch}-se${se}`} class="section">SECTION {se} : {title}</h5>
-
-<style>
-  .section {
-    font-size: 1rem;
-    font-weight: 600;
-    padding-left: 1em;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-  }
-</style>
+<h5 id={`bk${bk}-tl${tl}-ch${ch}-se${se}`} class="text-base font-semibold dark:text-white text-center md:text-start p-0 md:pl-8 my-4">
+  SECTION {se} : {title}
+</h5>

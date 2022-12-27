@@ -2,4 +2,6 @@
 const { bk, tl, ch, se, sb, title } = Astro.props;
 ---
 
-<h5 id={`bk${bk}-tl${tl}-ch${ch}-se${se}-sb${sb}`} class="sub-section">SOUS-SECTION {sb} : {title}</h5>
+<h5 id={`bk${bk}-tl${tl}-ch${ch}-se${se}-sb${sb}`} class="text-base font-semibold dark:text-white text-center md:text-start p-0 md:pl-8 my-4">
+  SOUS-SECTION {sb} : {title}
+</h5>

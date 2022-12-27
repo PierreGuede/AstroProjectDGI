@@ -2,4 +2,6 @@
 const { bk, title } = Astro.props;
 ---
 
-<h3 id={`bk${bk}`} class="book">LIVRE {bk} : {title}</h3>
+<h3 id={`bk${bk}`} class="text-2xl font-bold dark:text-white my-2 p-0 md:text-start text-center">
+  LIVRE {bk} : {title}
+</h3>

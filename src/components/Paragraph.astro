@@ -2,4 +2,6 @@
 const { bk, tl, ch, se, sb, pr, title } = Astro.props;
 ---
 
-<h5 id={`bk${bk}-tl${tl}-ch${ch}-se${se}-sb${sb}-pr${pr}`} class="paragraph">PARAGRAPHE {pr} : {title}</h5>
+<h5 id={`bk${bk}-tl${tl}-ch${ch}-se${se}-sb${sb}-pr${pr}`} class="text-base font-semibold dark:text-white pl-5 md:pl-10 my-4">
+  PARAGRAPHE {pr} : {title}
+</h5>

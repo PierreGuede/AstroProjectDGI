@@ -2,4 +2,6 @@
 const { bk, tl, ch, title } = Astro.props;
 ---
 
-<h5 id={`bk${bk}-tl${tl}-ch${ch}`} class="chapter">CHAPITRE {ch} : {title}</h5>
+<h5 id={`bk${bk}-tl${tl}-ch${ch}`} class="text-lg font-semibold dark:text-white text-center md:text-start p-0 md:pl-6 my-4">
+  CHAPITRE {ch} : {title}
+</h5>
