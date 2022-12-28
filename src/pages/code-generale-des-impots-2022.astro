@@ -6,6 +6,87 @@ import Chapter from "../components/Chapter.astro";
 import Section from "../components/Section.astro";
 import SubSection from "../components/SubSection.astro";
 import Paragraph from "../components/Paragraph.astro";
+import SideBar from "../components/SideBar.astro";
+
+const sideBarLinks = {
+  attributes: {
+    id:"bk",
+    title: "Livre",
+  },
+  childAttributes: {
+    id: "tl",
+    title: "Titre"
+  },
+  list : [ 
+  {
+    title: "Impôts directs",
+    subList: [
+        {
+          title: "Impôts sur le revenu",
+        },
+        {
+          title: "Taxe sur le patrimoine",
+        },
+        {
+          title: "Autres impôts directs et taxes assimilées",
+        },
+      ],
+  },
+  {
+    title: "Impôts indirects",
+    subList: [
+        {
+          title: "Taxes sur le chiffre d'affaires",
+        },
+        {
+          title: "Droits d'accises",
+        },
+        {
+          title: "Autres impôts indirects",
+        },
+      ],
+  },
+  {
+    title: "Enregistrements - Timbre",
+    subList: [
+        {
+          title: "Droits d'enregistrements",
+        },
+        {
+          title: "Droits de timbres",
+        },
+      ],
+  },
+  {
+    title: "Dispositions générales",
+    subList: [
+        {
+          title: "Obligations des contribuables",
+        },
+        {
+          title: "Sanctions",
+        },
+      ],
+  },
+  {
+    title: "Procédures fiscales",
+    subList: [
+        {
+          title: "Contrôle de l'impôt",
+        },
+        {
+          title: "Voies de recours du contribuable",
+        },
+        {
+          title: "Recouvrement de l'impôt",
+        },
+      ],
+  },
+  {
+    title: "Dispositions finales",
+  },
+  ]
+};
 ---
 
 <style>
@@ -35,12 +116,12 @@ import Paragraph from "../components/Paragraph.astro";
   title="Bénin : Code général des impôts 2022"
   description="Le Code Général des Impôts du Bénin a été entièrement refondu et modernisé en 2021 par la Direction Générale des Impôts. Le nouveau code a été adopté par la loi n°2021-15 du 23 décembre 2021, entrée en vigueur le 1er janvier 2022."
   url="code-general-des-impots-2022"
-  image="code-general-des-impots-2022.jpg"
+  image="code-general-des-impots-2022.png"
 >
+<SideBar links={sideBarLinks} />
   <div class="w-full transition-all ease-in duration-150" id="main">
     <div class="mb-8 flex flex-col justify-center bg-[#0d350d] h-96">
-      <h1
-        class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl text-white text-center"
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl text-white text-center"
       >
         CODE GÉNÉRAL DES IMPÔTS
       </h1>

@@ -1,7 +1,121 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SideBar from "../components/SideBar.astro";
+
+const sideBarLinks = {
+  first: {
+    title: "Conditions générales de l'équilibre budgetaire et financier",
+    attributes: {
+      id: "tl",
+      title: "Titre",
+    },
+    list: [
+      {
+        title: "Dispositions relatives aux ressources",
+        subList: [
+          {
+            title: "Impôts et revenus autorisés",
+            enum: ["Dispositions antérieures", "Mesures reconduites", "Mesures nouvelles"],
+          },
+          {
+            title: "Ressources affectées et ressources recouvrées au profit d'autres organismes publics",
+            enum: [
+              "Dispositions relatives aux collectives et aux établissements publics",
+              "Dispositions relatives au budget annexe et aux comptes spéciaux du trésor",
+              "Autres dispositions",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Dispositions relatives à l'équilibre des ressources et des charges",
+      },
+    ],
+  },
+  second: {
+    title: "Moyens des politiques publiques - dispositions spéciales et finales",
+    attributes: {
+      id: "tl",
+      title: "Titre",
+    },
+    list: [
+      {
+        title: "Moyens des politiques publiques",
+        subList: [
+          {
+            title: "Crédits budgetaires pour la gestion 2023",
+            enum: [
+              "Dispositions relatives au budget général",
+              "Dispositions relatives au budget annexe du fonds national des retraites du Bénin",
+              "Dispositions relatives aux comptes spéciaux du trésor",
+              "Dispositions relatives aux reports de crédits",
+            ],
+          },
+          {
+            title:
+              "Plafond des autorisations d'emplois pour la gestionn 2023 par le ministère et institution de l'état",
+          },
+        ],
+      },
+      {
+        title: "Dispositions spéciales et finales",
+        subList: [
+          {
+            title: "Dispositions spéciales",
+          },
+          {
+            title: "Dispositions finales",
+          },
+        ],
+      },
+    ],
+  },
+};
 ---
 
-<Layout title="Page index" description="" image="" url="">
-  <div class="w-full transition-all ease-in duration-150" id="main"></div>
+<style>
+  table {
+    border: 1px solid #b3adad;
+    border-collapse: collapse;
+    padding: 5px;
+    margin: 1rem 0;
+  }
+
+  table th {
+    border: 1px solid #b3adad;
+    padding: 5px;
+    background: #f0f0f0;
+    color: #313030;
+  }
+
+  table td {
+    border: 1px solid #b3adad;
+    padding: 5px;
+    background: #ffffff;
+    color: #313030;
+  }
+</style>
+
+<Layout title="Bénin : Lois des finances 2023" description="" image="" url="">
+  <div class="flex flex-col">
+    <SideBar links={sideBarLinks.first} />
+    <SideBar links={sideBarLinks.second} />
+  </div>
+  <div class="w-full transition-all ease-in duration-150" id="main">
+    <div class="mb-8 flex flex-col justify-center bg-[#0d350d] h-96">
+      <h1
+        class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl text-white text-center"
+      >
+        Lois des finances
+      </h1>
+      <h3
+        class="mb-4 text-2xl font-semibold tracking-tight leading-none md:text-3xl lg:text-4xl text-white text-center"
+      >
+        2023
+      </h3>
+      <p class="mb-6 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48 text-center">
+        Loi n° 2021-15 du 23 décembre 2021 portant code général des impôts de la République du Bénin.
+      </p>
+    </div>
+  </div>
 </Layout>

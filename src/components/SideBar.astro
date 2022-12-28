@@ -1,4 +1,31 @@
 ---
+import { list } from "postcss";
+
+export interface Props {
+  links: {
+    title: string;
+
+    attributes: {
+      id: string;
+      title: string;
+    };
+
+    childAttributes: {
+      id: string;
+      title: string;
+    };
+
+    list: {
+      title: string;
+      subList: {
+        title: string;
+        enum: string[];
+      }[];
+    }[];
+  };
+}
+
+const { links } = Astro.props;
 ---
 
 <script>
@@ -23,198 +50,66 @@
 
 <aside
   id="sidebar"
-  class="h-screen w-1/4 fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto overflow-x-hidden drop-shadow-md"
+  class="h-screen w-1/4 fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto drop-shadow-md"
   aria-label="Sidebar"
 >
-  <div class="overflow-y-auto py-4 px-2 bg-gray-50 dark:bg-gray-800">
+  <div class="overflow-y-auto overflow-x-hidden py-4 px-2 bg-gray-50 dark:bg-gray-800">
     <ul class="space-y-2 py-2">
-      <li>
-        <a
-          href="#"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
-          <span class="ml-3 font-bold">Haut de page</span>
-        </a>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-          aria-controls="dropdown-example"
-          data-collapse-toggle="dropdown-example"
-        >
-          <a href="#bk1">
-            <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
-              Livre 1 : Impôts directs
-            </span>
-          </a>
-        </button>
-        <ul id="dropdown-example" class="space-y-2 py-2">
+      {
+        links?.title && (
           <li>
             <a
-              href="#bk1-tl1"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 1 Impôts sur le revenu</a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
-          </li>
-          <li>
-            <a
-              href="#bk1-tl2"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 2 Taxe sur le patrimoine</a
-            >
-          </li>
-          <li>
-            <a
-              href="#bk1-tl3"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 3 Autres impôts directs et taxes assimilées</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-          aria-controls="dropdown-example"
-          data-collapse-toggle="dropdown-example"
-        >
-          <a href="#bk2">
-            <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
-              Livre 2 : Impôts Indirects
-            </span>
-          </a>
-        </button>
-        <ul id="dropdown-example" class="space-y-2 py-2">
-          <li>
-            <a
-              href="#bk2-tl1"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 1 Taxes sur le chiffre d'affaires</a
-            >
-          </li>
-          <li>
-            <a
-              href="#bk2-tl2"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 2 Droits d'accises</a
-            >
-          </li>
-          <li>
-            <a
-              href="#bk2-tl3"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 3 Autres impôts indirects</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-          aria-controls="dropdown-example"
-          data-collapse-toggle="dropdown-example"
-        >
-          <a href="#bk3">
-            <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
-              Livre 3 : Enregistrements - Timbre
-            </span>
-          </a>
-        </button>
-        <ul id="dropdown-example" class="space-y-2 py-2">
-          <li>
-            <a
-              href="#bk3-tl1"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 1 Droits d'enregistrements</a
-            >
-          </li>
-          <li>
-            <a
-              href="#bk3-tl2"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 2 Droits de timbres</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-          aria-controls="dropdown-example"
-          data-collapse-toggle="dropdown-example"
-        >
-          <a href="#bk4">
-            <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
-              Livre 4 : Dispositions générales
-            </span>
-          </a>
-        </button>
-        <ul id="dropdown-example" class="space-y-2 py-2">
-          <li>
-            <a
-              href="#bk4-tl1"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 1 Obligations des contribuables
+              <span class="ml-3 font-bold">{links.title}</span>
             </a>
           </li>
+        )
+      }
+      {
+        links?.list.map((link, index) => (
           <li>
-            <a
-              href="#bk4-tl2"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 2 Sanctions
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-          aria-controls="dropdown-example"
-          data-collapse-toggle="dropdown-example"
-        >
-          <a href="#bk5">
-            <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
-              Livre 5 : Procédures fiscales
-            </span>
-          </a>
-        </button>
-        <ul id="dropdown-example" class="space-y-2 py-2">
-          <li>
-            <a
-              href="#bk5-tl1"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 1 Contrôle de l'impôt</a
+            <button
+              type="button"
+              class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-example"
+              data-collapse-toggle="dropdown-example"
             >
+              <a href={`#${links.attributes.id + ++index}`}>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
+                  {`${links.attributes.title} ${index} : ${link.title}`}
+                </span>
+              </a>
+            </button>
+            <ul id="" class="space-y-2 py-2">
+              {link.subList?.map(
+                (subLink, subIndex) =>
+                  (links.childAttributes && (
+                    <li>
+                      <a
+                        href={`#${links.attributes.id + index}-${links?.childAttributes.id + ++subIndex}`}
+                        class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis overflow-hidden"
+                      >
+                        {`${links?.childAttributes.title} ${subIndex} - ${subLink.title}`}
+                      </a>
+                    </li>
+                  )) ||
+                  (!links.childAttributes && (
+                    <li>
+                      <a
+                        href={`#${links.attributes.id + index}-${++subIndex}`}
+                        class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis truncate"
+                      >
+                        {`${subIndex} - ${subLink.title}`}
+                      </a>
+                    </li>
+                  ))
+              )}
+            </ul>
           </li>
-          <li>
-            <a
-              href="#bk5-tl2"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 2 Voies de recours du contribuable</a
-            >
-          </li>
-          <li>
-            <a
-              href="#bk5-tl3"
-              class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >Titre 3 Recouvrement de l'impôt</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a
-          href="#bk6"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
-          <span class="ml-3 font-bold">Livre 6 : Dispositions finales</span>
-        </a>
-      </li>
+        ))
+      }
     </ul>
   </div>
 </aside>
