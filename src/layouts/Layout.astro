@@ -4,9 +4,12 @@ import SideBar from "../components/SideBar.astro";
 
 export interface Props {
   title: string;
+  description: string;
+  image: string;
+  url: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, url } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -24,17 +27,17 @@ const { title, description } = Astro.props;
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content={`/${url}`} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/seo-image.png" />
+    <meta property="og:image" content={`/${image}`} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="/" />
+    <meta property="twitter:url" content={`/${url}`} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/seo-image.png" />
+    <meta property="twitter:image" content={`/${image}`} />
   </head>
   <body class="mx-auto max-w-screen-2xl">
     <Navbar />

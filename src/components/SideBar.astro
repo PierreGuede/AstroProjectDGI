@@ -2,15 +2,14 @@
 ---
 
 <script>
-  const toggleSideBar = document.getElementById("toggle-sidebar");
+  const toggleSideBar = document.getElementById("toggle-sidebar") as HTMLButtonElement;
+  const sidebar = document.getElementById("sidebar") as HTMLDivElement;
 
-  toggleSideBar?.addEventListener("click", () => {
-    const sidebar = document.querySelector(".w-fit-content");
-    sidebar?.classList.toggle("-translate-x-full");
-  });
+  toggleSideBar?.addEventListener("click", () => sidebar?.classList.toggle("-translate-x-full"));
 </script>
 
 <aside
+  id="sidebar"
   class="h-screen w-fit-content fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto overflow-x-hidden drop-shadow-md"
   aria-label="Sidebar"
 >

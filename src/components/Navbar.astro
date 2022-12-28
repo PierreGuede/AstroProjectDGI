@@ -2,38 +2,29 @@
 ---
 
 <script>
-  const toggle = document.getElementById("dropdownNavbarLink");
-  const dropdown = document.getElementById("dropdownNavbar");
-
-  toggle?.addEventListener("click", () => {
-    dropdown?.classList.toggle("hidden");
-    dropdown?.classList.toggle("absolute");
-  });
-
-  const searchForm = document.getElementById("search-form");
-  const searchInput = document.getElementById("search-input");
+  const searchForm = document.getElementById("search-form") as HTMLFormElement;
+  const searchInput = document.getElementById("search-input") as HTMLInputElement;
 
   searchForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    let found = window.find(searchInput?.value);
-
-    if (!found) alert("Le terme de recherche n'a pas été trouvé.");
-
-    // searchForm?.reset();
+    if (!window?.find(searchInput?.value)) alert("Le terme de recherche n'a pas été trouvé.");
   });
 </script>
 
-<nav class="px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full fixed z-30">
+<nav class="px-2 border-gray-200 dark:bg-gray-900 dark:border-gray-700 z-50 w-full bg-white shadow top-0 sticky">
   <div class="container flex flex-wrap items-center justify-between mx-auto h-20">
-    <a href="javascript:void(0);" class="flex items-center" id="toggle-sidebar">
+    <a
+      href="javascript:void(0);"
+      class="flex items-center"
+      id="toggle-sidebar"
+      title="Cliquer pour afficher/masquer le menu"
+    >
       <svg width="32" height="32" class="mr-2" viewBox="0 0 24 24"
         ><path
           fill="currentColor"
           d="M4 18q-.425 0-.712-.288Q3 17.425 3 17t.288-.712Q3.575 16 4 16h16q.425 0 .712.288q.288.287.288.712t-.288.712Q20.425 18 20 18Zm0-5q-.425 0-.712-.288Q3 12.425 3 12t.288-.713Q3.575 11 4 11h16q.425 0 .712.287q.288.288.288.713t-.288.712Q20.425 13 20 13Zm0-5q-.425 0-.712-.287Q3 7.425 3 7t.288-.713Q3.575 6 4 6h16q.425 0 .712.287Q21 6.575 21 7t-.288.713Q20.425 8 20 8Z"
         ></path>
       </svg>
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Menu</span>
     </a>
     <button
       data-collapse-toggle="navbar-dropdown"
@@ -60,7 +51,7 @@
       />
       <button
         type="submit"
-        class=" mr-6 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-l-none h-10"
+        class="mr-6 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 rounded-l-none h-10"
         >Rechercher</button
       >
     </form>
