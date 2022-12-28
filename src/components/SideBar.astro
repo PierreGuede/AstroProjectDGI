@@ -53,7 +53,7 @@ const { links } = Astro.props;
   class="h-screen w-1/4 fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto drop-shadow-md"
   aria-label="Sidebar"
 >
-  <div class="overflow-y-auto overflow-x-hidden py-4 px-2 bg-gray-50 dark:bg-gray-800">
+  <div class="overflow-y-auto overflow-x-hidden py-4 pt-20 px-2 bg-gray-50 dark:bg-gray-800">
     <ul class="space-y-2 py-2">
       {
         links?.title && (
@@ -69,7 +69,7 @@ const { links } = Astro.props;
       }
       {
         links?.list.map((link, index) => (
-          <li class="mt-16">
+          <li class="">
             <button
               type="button"
               class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
