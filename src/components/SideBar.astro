@@ -4,13 +4,26 @@
 <script>
   const toggleSideBar = document.getElementById("toggle-sidebar") as HTMLButtonElement;
   const sidebar = document.getElementById("sidebar") as HTMLDivElement;
+  const main = document.getElementById("main") as HTMLDivElement;
 
-  toggleSideBar?.addEventListener("click", () => sidebar?.classList.toggle("-translate-x-full"));
+  toggleSideBar?.addEventListener("click", () => {
+    sidebar?.classList.toggle("-translate-x-full");
+
+    if (sidebar?.classList.contains("-translate-x-full")) {
+      main?.classList.add("w-full");
+      main?.classList.remove("w-3/4");
+    } else {
+      main?.classList.remove("w-full");
+      main?.classList.add("w-3/4");
+      main?.classList.add("absolute");
+      main?.classList.add("right-0");
+    }
+  });
 </script>
 
 <aside
   id="sidebar"
-  class="h-screen w-fit-content fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto overflow-x-hidden drop-shadow-md"
+  class="h-screen w-1/4 fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto overflow-x-hidden drop-shadow-md"
   aria-label="Sidebar"
 >
   <div class="overflow-y-auto py-4 px-2 bg-gray-50 dark:bg-gray-800">
