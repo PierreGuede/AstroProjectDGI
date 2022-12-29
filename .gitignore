@@ -21,3 +21,7 @@ pnpm-debug.log*
 
 # lock files
 package-lock.json
+
+# editor files
+.idea/
+.vscode/
