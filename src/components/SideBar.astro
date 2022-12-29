@@ -3,29 +3,83 @@ import { list } from "postcss";
 
 export interface Props {
   links: {
-    title: string;
+    title?: string;
 
     attributes: {
       id: string;
       title: string;
     };
 
-    childAttributes: {
+    childAttributes?: {
       id: string;
       title: string;
     };
 
     list: {
       title: string;
-      subList: {
+      subList?: {
         title: string;
-        enum: string[];
+        enum?: string[];
+      }[];
+    }[];
+  };
+
+  bottomLinks?: {
+    title?: string;
+
+    attributes: {
+      id: string;
+      title: string;
+    };
+
+    childAttributes?: {
+      id: string;
+      title: string;
+    };
+
+    list: {
+      title: string;
+      subList?: {
+        title: string;
+        enum?: string[];
       }[];
     }[];
   };
 }
 
-const { links } = Astro.props;
+const lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+
+function getGreekNumeral(num: number): string {
+  const greekNumerals: { [key: number]: string } = {
+    1: "I",
+    4: "IV",
+    5: "V",
+    9: "IX",
+    10: "X",
+    40: "XL",
+    50: "L",
+    90: "XC",
+    100: "C",
+    400: "CD",
+    500: "D",
+    900: "CM",
+    1000: "M",
+  };
+
+  let result = "";
+  let remaining = num;
+
+  for (let value of Object.keys(greekNumerals).reverse()) {
+    while (remaining >= Number(value)) {
+      result += greekNumerals[Number(value)];
+      remaining -= Number(value);
+    }
+  }
+
+  return result;
+}
+
+const { links, bottomLinks } = Astro.props;
 ---
 
 <script>
@@ -35,81 +89,150 @@ const { links } = Astro.props;
 
   toggleSideBar?.addEventListener("click", () => {
     sidebar?.classList.toggle("-translate-x-full");
-
-    if (sidebar?.classList.contains("-translate-x-full")) {
-      main?.classList.add("w-full");
-      main?.classList.remove("w-3/4");
-    } else {
-      main?.classList.remove("w-full");
-      main?.classList.add("w-3/4");
-      main?.classList.add("absolute");
-      main?.classList.add("right-0");
-    }
+    main?.classList.toggle("ml-80");
   });
 </script>
 
 <aside
   id="sidebar"
-  class="h-screen w-1/4 fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto drop-shadow-md"
+  class="h-screen w-80 fixed z-20 -translate-x-full transition-transform ease-in duration-150 overflow-y-auto drop-shadow-md"
   aria-label="Sidebar"
 >
-  <div class="overflow-y-auto overflow-x-hidden py-4 px-2 bg-gray-50 dark:bg-gray-800">
-    <ul class="space-y-2 py-2">
-      {
-        links?.title && (
-          <li>
-            <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              <span class="ml-3 font-bold">{links.title}</span>
-            </a>
-          </li>
-        )
-      }
+  <div class="py-4 pt-20 px-2 bg-gray-50 dark:bg-gray-800">
+    {
+      links?.title && (
+        <a
+          href="#"
+          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+        >
+          <span class="ml-3 font-bold">{links.title}</span>
+        </a>
+      )
+    }
+    <ul class="space-y-2 py-2 list-none">
       {
         links?.list.map((link, index) => (
           <li>
-            <button
-              type="button"
-              class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              aria-controls="dropdown-example"
-              data-collapse-toggle="dropdown-example"
+            <a
+              href={`#${links.attributes.id + ++index}`}
+              class="flex items-center ml-2 p-2 font-semibold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
-              <a href={`#${links.attributes.id + ++index}`}>
-                <span class="flex-1 ml-3 text-left whitespace-nowrap font-bold" sidebar-toggle-item>
-                  {`${links.attributes.title} ${index} : ${link.title}`}
-                </span>
-              </a>
-            </button>
-            <ul id="" class="space-y-2 py-2">
-              {link.subList?.map(
-                (subLink, subIndex) =>
-                  (links.childAttributes && (
-                    <li>
-                      <a
-                        href={`#${links.attributes.id + index}-${links?.childAttributes.id + ++subIndex}`}
-                        class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis overflow-hidden"
-                      >
-                        {`${links?.childAttributes.title} ${subIndex} - ${subLink.title}`}
-                      </a>
-                    </li>
-                  )) ||
-                  (!links.childAttributes && (
-                    <li>
-                      <a
-                        href={`#${links.attributes.id + index}-${++subIndex}`}
-                        class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis truncate"
-                      >
-                        {`${subIndex} - ${subLink.title}`}
-                      </a>
-                    </li>
-                  ))
-              )}
-            </ul>
+              {`${links.attributes.title} ${index} : ${link.title}`}
+            </a>
+            {link.subList && (
+              <ul class="space-y-2 py-2">
+                {link.subList?.map(
+                  (subLink, subIndex) =>
+                    (links.childAttributes && (
+                      <li>
+                        <a
+                          href={`#${links.attributes.id + index}-${links?.childAttributes.id + ++subIndex}`}
+                          class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis overflow-hidden"
+                        >
+                          {`${links?.childAttributes.title} ${subIndex} - ${subLink.title}`}
+                        </a>
+                      </li>
+                    )) ||
+                    (!links.childAttributes && (
+                      <li>
+                        <a
+                          href={`#${links.attributes.id + index}-${++subIndex}`}
+                          class="flex items-center pl-6 mb-2 w-full text-sm font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
+                        >
+                          {`${getGreekNumeral(subIndex)} - ${subLink.title}`}
+                        </a>
+                        <ul>
+                          {subLink.enum?.map((enumItem, enumIndex) => (
+                            <li>
+                              <a
+                                href={`#${links.attributes.id + index}-${subIndex}-${lowerCaseCharacters.charAt(
+                                  enumIndex
+                                )}`}
+                                class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
+                              >
+                                {`${lowerCaseCharacters.charAt(enumIndex)} - ${enumItem}`}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))
+                )}
+              </ul>
+            )}
           </li>
         ))
       }
     </ul>
   </div>
+  {
+    bottomLinks && (
+      <>
+        <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+        <div class="overflow-y-auto py-4 px-2 bg-gray-50 dark:bg-gray-800">
+          {bottomLinks?.title && (
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              <span class="ml-3 font-bold">{bottomLinks.title}</span>
+            </a>
+          )}
+          <ul class="space-y-2 py-2 list-none">
+            {bottomLinks?.list.map((link, index) => (
+              <li>
+                <a
+                  href={`#${bottomLinks.attributes.id + ++index}`}
+                  class="flex items-center ml-2 p-2 font-semibold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  {`${bottomLinks.attributes.title} ${index} : ${link.title}`}
+                </a>
+                <ul id="" class="space-y-2 py-2">
+                  {link.subList?.map(
+                    (subLink, subIndex) =>
+                      (bottomLinks.childAttributes && (
+                        <li>
+                          <a
+                            href={`#${bottomLinks.attributes.id + index}-${
+                              bottomLinks?.childAttributes.id + ++subIndex
+                            }`}
+                            class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis overflow-hidden"
+                          >
+                            {`${bottomLinks?.childAttributes.title} ${subIndex} - ${subLink.title}`}
+                          </a>
+                        </li>
+                      )) ||
+                      (!bottomLinks.childAttributes && (
+                        <li>
+                          <a
+                            href={`#${bottomLinks.attributes.id + index}-${++subIndex}`}
+                            class="flex items-center pl-6 mb-2 w-full text-sm font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
+                          >
+                            {`${getGreekNumeral(subIndex)} - ${subLink.title}`}
+                          </a>
+                          <ul class="">
+                            {subLink.enum?.map((enumItem, enumIndex) => (
+                              <li>
+                                <a
+                                  href={`#${bottomLinks.attributes.id + index}-${subIndex}-${lowerCaseCharacters.charAt(
+                                    enumIndex
+                                  )}`}
+                                  class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
+                                >
+                                  {`${lowerCaseCharacters.charAt(enumIndex)} - ${enumItem}`}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </li>
+                      ))
+                  )}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
+    )
+  }
 </aside>
