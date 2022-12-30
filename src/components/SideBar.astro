@@ -101,6 +101,8 @@ const { links, bottomLinks } = Astro.props;
       const element = document.querySelector(href);
       element?.scrollIntoView({ behavior: "smooth", block: "center" });
       window.history.pushState({}, "", href);
+      sidebar?.classList.toggle("-translate-x-full");
+      main?.classList.toggle("ml-80");
     });
   });
 </script>
