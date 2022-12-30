@@ -73,7 +73,7 @@ const sideBarBottomLinks = {
 
 <Layout title="Bénin : Lois des finances 2023" description="" image="" url="">
   <SideBar links={sideBarLinks} bottomLinks={sideBarBottomLinks} />
-  <main class="w-full transition-all ease-in duration-150" id="main">
+  <main class="w-full transition-all ease-in duration-150 scroll-smooth overflow-y-scroll" id="main">
     <div class="flex flex-col justify-center bg-[#0d350d] h-96 my-8">
       <h1
         class="mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl text-white text-center"
@@ -113,9 +113,9 @@ const sideBarBottomLinks = {
         <p class="mb-2 text-center" id="pt1">
           <b>PREMIERE PARTIE : CONDITIONS GENERALES DE L'EQUILIBRE BUDGETAIRE ET FINANCIER</b>
         </p>
-        <p class="mb-2 text-center font-medium text-lg" id="tl1">TITRE I : DISPOSITIONS RELATIVES AUX RESSOURCES</p>
-        <p class="mb-2 text-center font-medium" id="tl1-1"><b>I - IMPÔTS ET REVENUS AUTORISES</b></p>
-        <p class="mb-2 text-center" id="tl1-1-a"><b>A - DISPOSITIONS ANTERIEURES</b></p>
+        <p class="mb-2 text-center font-bold text-lg" id="tl1">TITRE I : DISPOSITIONS RELATIVES AUX RESSOURCES</p>
+        <p class="mb-2 text-center font-bold" id="tl1-1"><b>I - IMPÔTS ET REVENUS AUTORISES</b></p>
+        <p class="mb-2 text-center" id="tl1-1-A"><b>A - DISPOSITIONS ANTERIEURES</b></p>
         <p class="mb-2">
           <b>Article 1<sup>er</sup> :</b> Sous réserve des dispositions de la présente loi, continueront d'être opérées,
           pendant l'année 2023, conformément aux dispositions législatives et réglementaires en vigueur :
@@ -154,7 +154,7 @@ const sideBarBottomLinks = {
           gratui tement sans autorisation légale ou réglementaire, la délivrance des produits ou services de ces
           entreprises.
         </p>
-        <p class="mb-2" id="">B- MESURES RECONDUITES</p>
+        <p class="mb-2 font-bold text-center" id="tl1-1-B">B- MESURES RECONDUITES</p>
         <p class="mb-2">
           <b>Article 2 :</b> Les camions neufs importés, fabriqués ou vendus à l'état neuf en Républiquedu Bénin sont exonérés
           de tous droits et taxes de douane et de la taxe sur la valeurajoutée (TVA) durant la période allant du 1<sup
@@ -315,7 +315,7 @@ const sideBarBottomLinks = {
         <p class="mb-2 ml-8">- Redevance d'aménagement urbain (RAU) ;</p>
         <p class="mb-2 ml-8">- Redevance statistique (RS) ;</p>
         <p class="mb-2 ml-8">- Taxe de voirie (TV).</p>
-        <p class="mb-2">C- MESURES NOUVELLES</p>
+        <p class="mb-2 font-bold text-center" id="tl1-1-C">C- MESURES NOUVELLES</p>
         <p class="mb-2">
           <b>Article 12 :</b> Du 1<sup>er</sup> janvier au 31 décembre 2023 et nonobstant les dispositions des articles 487,
           488 et 645 du code général des impôts, les majorations, intérêts de retard, coût decommandement et frais de saisie
@@ -1263,7 +1263,7 @@ const sideBarBottomLinks = {
           II - RESSOURCES AFFECTEES ET RESSOURCES RECOUVREES AU PROFIT D'AUTRES ORGANISMES PUBLICS
         </p>
 
-        <p class="mb-2 font-bold text-center" id="tl1-2-a">
+        <p class="mb-2 font-bold text-center" id="tl1-2-A">
           A- DISPOSITIONS RELATIVES AUX COLLECTIVITES LOCALES ET AUX ETABLISSEMENTS PUBLICS
         </p>
         <p class="mb-2">
@@ -1300,7 +1300,7 @@ const sideBarBottomLinks = {
           évaluées à 12 469 millions de francs CFA.
         </p>
 
-        <p class="mb-2 text-center font-bold" id="tl1-2-b">
+        <p class="mb-2 text-center font-bold" id="tl1-2-B">
           B- DISPOSITIONS RELATIVES AU BUDGET ANNEXE ET AUX COMPTES SPECIAUX DU TRESOR
         </p>
         <p class="mb-2">
@@ -1355,7 +1355,7 @@ const sideBarBottomLinks = {
           organismes publics.
         </p>
 
-        <p class="mb-2 font-bold text-center" id="tl1-2-c">C - AUTRES DISPOSITIONS</p>
+        <p class="mb-2 font-bold text-center" id="tl1-2-C">C - AUTRES DISPOSITIONS</p>
 
         <p class="mb-2">
           <b>Article 28 :</b> Les recettes à recouvrer au titre de la participation de la République du Bénin aux budgets
@@ -1386,7 +1386,7 @@ const sideBarBottomLinks = {
           </tr>
         </table>
 
-        <p class="mb-2" id="tl1-2">TITRE II DISPOSITIONS RELATIVES A L'EQUILIBRE DES RESSOURCES ET DES CHARGES</p>
+        <p class="mb-2 font-bold text-center" id="tl2">TITRE II DISPOSITIONS RELATIVES A L'EQUILIBRE DES RESSOURCES ET DES CHARGES</p>
         <p class="mb-2">
           <b>Article 29 :</b> Les ressources de la loi de finances pour la gestion 2023 sont évaluées à 3 033 337 millions
           de francs CFA et comprennent:
@@ -2527,16 +2527,10 @@ const sideBarBottomLinks = {
           rémunérés dans les ministères et institutions par l'État, exprimé en équivalent temps plein (ETP), est fixé pour
           la gestion 2023 à 105 750.
         </p>
-        <p class="mb-2"><b>DEUXIEME PARTIE</b></p>
-        <p class="mb-2"><b>MOYENS DES POLITIQUES PUBLIQUES - DISPOSITIONS SPECIALES ET FINALES</b></p>
-        <p class="mb-2"><b>TITRE I</b></p>
-        <p class="mb-2"><b>MOYENS DES POLITIQUES PUBLIQUES</b></p>
-        <p class="mb-2"><b>I- CREDITS BUDGETAIRES POUR LA GESTION 2023</b></p>
-        <p class="mb-2"><b>A-</b></p>
-        <p class="mb-2"><i>DISPOSITIONS</i></p>
-        <p class="mb-2"><b>RELATIVES AL)</b></p>
-        <p class="mb-2"><i>BUDGET</i></p>
-        <p class="mb-2"><b>GENERAL</b></p>
+        <p class="mb-2 font-bold text-center" id="pt2"><b>DEUXIEME PARTIE MOYENS DES POLITIQUES PUBLIQUES - DISPOSITIONS SPECIALES ET FINALES</b></p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1"><b>TITRE I - MOYENS DES POLITIQUES PUBLIQUES</b></p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1-1"><b>I- CREDITS BUDGETAIRES POUR LA GESTION 2023</b></p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1-1-A"><b>A - DISPOSITIONS RELATIVES AU BUDGET GENERAL</b></p>
 
         <p class="mb-2">
           <b>Article 39 :</b> Il est ouvert au budget général pour la gestion 2023, des crédits de paiements'élevant à 2
@@ -2598,19 +2592,14 @@ const sideBarBottomLinks = {
           loi.
         </p>
 
-        <p class="mb-2"><i>B- DISPOSITIONS RELATIVES AU BUDGET ANNEXE DU FONDS NATIONAL DES</i></p>
-        <p class="mb-2"><i>RETRAITES DU BENIN</i></p>
-        <p class="mb-2"><b>Article 43 :</b> Ilest ouvert au budget annexe du fonds national des retraites du Bénin</p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1-1-B">B- DISPOSITIONS RELATIVES AU BUDGET ANNEXE DU FONDS NATIONAL DES RETRAITES DU BENIN</p>
+        <p class="mb-2"><b>Article 43 :</b> Il est ouvert au budget annexe du fonds national des retraites du Bénin</p>
         <p class="mb-2">
           (FNRB) pour la gestion 2023, des crédits de paiement (CP) s'élevant à 105 400 millionsde francs CFA comme
           indiqué dans le tableau A annexé à la présente loi.
         </p>
 
-        <p class="mb-2">C-</p>
-        <p class="mb-2"><i>DISPOSITIONS RELATIVES AUX COMPTES</i></p>
-        <p class="mb-2">SPECIAUX</p>
-        <p class="mb-2"><i>DU</i></p>
-        <p class="mb-2"><b>TRESOR</b></p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1-1-C">C - DISPOSITIONS RELATIVES AUX COMPTES SPECIAUX DU TRESOR</p>
 
         <p class="mb-2">
           <b>Article 44 :</b> Il est ouvert en 2023, au profit des ministères au titre des comptesd'affectation spéciale,
@@ -2622,8 +2611,7 @@ const sideBarBottomLinks = {
           <b>Article 45 :</b> Le montant des crédits de paiement (CP) ouverts en loi de finances pour lagestion 2023, au
           titre des concours financiers de l'Etat (avances et prêts) s'élève à 12 000 millions de FCFA.
         </p>
-        <p class="mb-2"><b>D-</b></p>
-        <p class="mb-2"><i>DISPOSITIONS RELATIVES AUX REPORTS DE CREDITS</i></p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1-1-D">D- DISPOSITIONS RELATIVES AUX REPORTS DE CREDITS</p>
 
         <p class="mb-2">
           <b>Article 46 :</b> Le président de la République est autorisé, en cours d'année 2023, àprocéder par voie de décret,
@@ -2631,8 +2619,7 @@ const sideBarBottomLinks = {
           le parlement.
         </p>
 
-        <p class="mb-2"><b>Il- PLAFOND DES AUTORISATIONS D'EMPLOIS POUR LA GESTION 2023 PAR MINISTERE</b></p>
-        <p class="mb-2"><b>ET INSTITUTION DE L'ETAT</b></p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl1-2"><b>II- PLAFOND DES AUTORISATIONS D'EMPLOIS POUR LA GESTION 2023 PAR MINISTEREET INSTITUTION DE L'ETAT</b></p>
 
         <p class="mb-2">
           <b>Article 47 :</b> Le plafond des autorisations d'emplois rémunérés par l'Etat au titre de lagestion 2023, exprimé
@@ -2917,9 +2904,8 @@ const sideBarBottomLinks = {
           </tr>
         </table>
 
-        <p class="mb-2">TITRE II</p>
-        <p class="mb-2">DISPOSITIONS SPECIALES ET FINALES</p>
-        <p class="mb-2">I- DISPOSITIONS SPECIALES</p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl2">TITRE II DISPOSITIONS SPECIALES ET FINALES</p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl2-1">I- DISPOSITIONS SPECIALES</p>
 
         <p class="mb-2">
           <b>Article 48 :</b> Le ministre chargé des finances, ordonnateur principal unique des recettes du budget de [Etat
@@ -2937,7 +2923,7 @@ const sideBarBottomLinks = {
           gestion 2024. Toutefois, lesdits engagementsne peuvent excéder le quart des crédits ouverts en 2023.
         </p>
 
-        <p class="mb-2">DISPOSITIONS FINALES</p>
+        <p class="mb-2 font-bold text-center" id="pt2-tl2-2">II - DISPOSITIONS FINALES</p>
         <p class="mb-2">
           <b>Article 50 :</b> Sont abrogées, toutes dispositions antérieures contraires à celles de laprésente loi.
         </p>

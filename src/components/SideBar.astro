@@ -47,7 +47,7 @@ export interface Props {
   };
 }
 
-const lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function getGreekNumeral(num: number): string {
   const greekNumerals: { [key: number]: string } = {
@@ -90,6 +90,18 @@ const { links, bottomLinks } = Astro.props;
   toggleSideBar?.addEventListener("click", () => {
     sidebar?.classList.toggle("-translate-x-full");
     main?.classList.toggle("ml-80");
+  });
+
+  const sidebarLinks = document.querySelectorAll("#sidebar a");
+
+  sidebarLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = link.getAttribute("href");
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.history.pushState({}, "", href);
+    });
   });
 </script>
 
@@ -145,12 +157,10 @@ const { links, bottomLinks } = Astro.props;
                           {subLink.enum?.map((enumItem, enumIndex) => (
                             <li>
                               <a
-                                href={`#${links.attributes.id + index}-${subIndex}-${lowerCaseCharacters.charAt(
-                                  enumIndex
-                                )}`}
+                                href={`#${links.attributes.id + index}-${subIndex}-${characters.charAt(enumIndex)}`}
                                 class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
                               >
-                                {`${lowerCaseCharacters.charAt(enumIndex)} - ${enumItem}`}
+                                {`${characters.charAt(enumIndex)} - ${enumItem}`}
                               </a>
                             </li>
                           ))}
@@ -182,7 +192,7 @@ const { links, bottomLinks } = Astro.props;
             {bottomLinks?.list.map((link, index) => (
               <li>
                 <a
-                  href={`#${bottomLinks.attributes.id + ++index}`}
+                  href={`#pt2-${bottomLinks.attributes.id + ++index}`}
                   class="flex items-center ml-2 p-2 font-semibold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {`${bottomLinks.attributes.title} ${index} : ${link.title}`}
@@ -193,7 +203,7 @@ const { links, bottomLinks } = Astro.props;
                       (bottomLinks.childAttributes && (
                         <li>
                           <a
-                            href={`#${bottomLinks.attributes.id + index}-${
+                            href={`#pt2-${bottomLinks.attributes.id + index}-${
                               bottomLinks?.childAttributes.id + ++subIndex
                             }`}
                             class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis overflow-hidden"
@@ -205,7 +215,7 @@ const { links, bottomLinks } = Astro.props;
                       (!bottomLinks.childAttributes && (
                         <li>
                           <a
-                            href={`#${bottomLinks.attributes.id + index}-${++subIndex}`}
+                            href={`#pt2-${bottomLinks.attributes.id + index}-${++subIndex}`}
                             class="flex items-center pl-6 mb-2 w-full text-sm font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
                           >
                             {`${getGreekNumeral(subIndex)} - ${subLink.title}`}
@@ -214,12 +224,12 @@ const { links, bottomLinks } = Astro.props;
                             {subLink.enum?.map((enumItem, enumIndex) => (
                               <li>
                                 <a
-                                  href={`#${bottomLinks.attributes.id + index}-${subIndex}-${lowerCaseCharacters.charAt(
+                                  href={`#pt2-${bottomLinks.attributes.id + index}-${subIndex}-${characters.charAt(
                                     enumIndex
                                   )}`}
                                   class="flex items-center pl-11 w-full text-sm font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 text-ellipsis"
                                 >
-                                  {`${lowerCaseCharacters.charAt(enumIndex)} - ${enumItem}`}
+                                  {`${characters.charAt(enumIndex)} - ${enumItem}`}
                                 </a>
                               </li>
                             ))}
